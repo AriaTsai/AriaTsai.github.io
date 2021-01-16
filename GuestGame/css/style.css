@@ -1,0 +1,191 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+#game {
+  background-color: rgb(208, 255, 121);
+  position: relative;
+}
+
+/* 遊戲簡介 */
+.full-screen{
+  position:fixed;
+  top:0px;
+  left:0px;
+  width:100%;
+  height:100%;
+  z-index:10;
+  background: rgba(0,0,0,.5);
+  display:flex;
+  justify-content: center;
+  align-items:center;
+}
+/*  class x  */
+.full-screen.x{
+  display:none;
+}
+
+.full-screen .text{
+  width:60%;
+  max-height: 80%;
+  background: #fff;
+  padding:20px;
+  position: relative;
+  border-radius: 10px;
+  border: 3px solid rgb(243, 243, 243);
+  background-color: rgb(76, 95, 69);
+  color: #fff;
+}
+.full-screen .text .btn-close{
+  position: absolute;
+  top:-10px;
+  right:-10px;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  background-color: #f00;
+  color: #fff;
+  text-decoration: none;
+}
+
+/* background */
+.back {
+  height: 100vh;
+  background-color: rgb(208, 255, 121);
+  position: relative;
+  display:flex;
+  flex-direction: column;
+}
+.back .sun {
+  position: absolute;
+  top: 0;
+  background-image: url(../pic2/sun2.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 200px; height:200px;
+  animation-name: animation-1;
+  animation-duration: 2s;
+  animation-iteration-count:infinite;
+  animation-direction:alternate;
+}
+.back .tree {
+  position: absolute;
+  bottom: 0;
+  background-image: url(../pic2/tree2.png);
+  background-size: contain;
+  background-repeat: repeat-x;
+  width: 100%; height:100px;
+}
+
+@keyframes animation-1 {
+  from {
+    transform: scale(1)
+  }
+  to {
+    transform: scale(1.5)
+  }
+}
+
+/* main */
+.main {
+  width:100%;
+  height:100%;
+  display: flex;
+  align-items: center;
+}
+.outside {
+  box-shadow: 0 0 5px 5px rgb(182, 182, 182);
+  font-family:Microsoft JhengHei;
+}
+.item-group {
+  position: relative;
+  min-height:200px;
+  background-color: rgb(250, 250, 227);
+  text-align: center;
+}
+
+
+/* button-group */
+.button-group {
+  display:flex;
+  margin: 10px 0;
+}
+
+/* pic-group */
+.pic-group {
+  justify-content: center;
+}
+.pic-group .content {
+  cursor: pointer;
+}
+.pic-group img {
+  width:120px; height:120px;
+  transition: all .1s;
+}
+
+/* title-group */
+.title-group {
+  text-align: center;
+  padding:10px 0;
+}
+
+/* guest-group */
+.guest-group {
+  text-align: center;
+  line-height: 50px;
+}
+
+/* answer-group */
+.answer-group {
+  line-height: 50px;
+}
+
+
+
+@media screen and (min-width:300px) and (max-width:768px) {
+  .container-xl {
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+  }
+  .outside {
+    width:80%;
+  }
+  .back {
+    min-height: 700px;
+  }
+  .back .sun {
+    width:40%;
+    height:40%;
+  }
+  .button-group button{
+    font-size:12px;
+  }
+  .pic-group img {
+    width: 90%;
+    height: 90%;
+  }
+  .pic-group .content {
+    font-size:12px;
+    margin: 10px 0;
+  }
+  .title-group {
+    text-align: center;
+    padding:5px 0;
+    font-size:11px;
+  }
+  .title-group .title {
+    height:30px;
+  }
+  .guest-group {
+    font-size: 11px;
+    line-height: 30px;
+  }
+  .answer-group {
+    font-size: 11px;
+    line-height: 20px;
+    line-height: 30px;
+  }
+}

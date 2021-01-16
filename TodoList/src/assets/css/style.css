@@ -1,0 +1,355 @@
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  font-family:Microsoft JhengHei;
+  background: none;
+}
+#app {
+  width: 100%;
+  height: 100%;
+}
+
+/* nav */
+#nav {
+  color: #fff;
+}
+.nav-group {
+  width:100%;
+  height:80px;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: rgb(226, 84, 74);
+}
+#nav roter-link {
+  color: #fff;
+}
+.nav-group >.title {
+  color: #fff;
+  font-size: 25px;
+  border-radius:10%;
+  padding:5px; margin: 0 5px;
+}
+.nav-group >.title:hover {
+  background-color: rgb(243, 242, 242);
+  color:#000;
+  font-size:28px;
+}
+
+/* content */
+.content-group {
+  height: 100vh;
+  background-color: #E1E1E1;
+}
+.content {
+  width:100%;
+  background-color: #E1E1E1;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+/* addNew */
+.addNew {
+  width:100%;
+  height:100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.addNew > button {
+  width: 50%;
+  margin: 20px 0;
+  background: #FFFFFF;
+  border: 2px solid #C8C8C8;
+  border-radius: 5px;
+  font-size: 24px;
+  color: #C8C8C8;
+  text-align: left;
+  padding: 10px;
+  cursor: pointer;
+}
+.addNew > button span {
+  margin: 0px 10px;
+}
+
+
+
+
+/* addTodo */
+.addTodo {
+  width:50%;
+  background: #F2F2F2;
+  box-shadow: 0 4px 4px 0 #C8C8C8;
+  border-radius: 5px;
+  margin: 30px 0 20px;
+}
+.addTodo >.title {
+  background: #F2F2F2;
+  border-radius: 5px 5px 0 0;
+  border-bottom: .5px solid rgb(155, 152, 152);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 20px;
+}
+.addTodo .title .text-group {
+  width:70%;
+  display:flex;
+}
+.addTodo .title .check {
+  width: 20px;
+  height: 20px;
+  margin: 20px;
+}
+.addTodo .title .todoTitle {
+  width:100%;
+  border: none;
+  border-radius:4px;
+  margin: 5px 0;
+  font-size: 24px;
+  color: #000000;
+  background-color: #F2F2F2;
+}
+.addTodo .title .todoTitle:focus {
+  outline: 0;
+}
+.pic-group {
+  display: flex;
+  margin: 0 10px;
+}
+.addTodo .pic-group input{
+  border: 0 ;
+  outline: none;
+}
+.addTodo .pic-group .star-group{
+  display:none;
+}
+.addTodo .star {
+  width: 30px;
+  height: 30px;
+  margin:0 10px;
+  background-image: url(../../assets/pic/star.png);
+  background-size: contain;
+}
+.addTodo .star_full {
+  width: 30px;
+  height: 30px;
+  margin:0 10px;
+  background-image: url(../../assets/pic/star_full.png);
+  background-size: contain;
+}
+.addTodo .edit {
+  width: 30px;
+  height: 30px;
+  margin:0 10px;
+  background-image: url(../../assets/pic/edit.png);
+  background-size: contain;
+}
+.addTodo .task .add {
+  font-size: 18px;
+  padding: 20px 60px 20px 60px;
+}
+.addTodo .task .deadline {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 0 10px;
+}
+.addTodo .task .deadline >.title {
+  display: flex;
+  align-items: center;
+}
+.addTodo .task .deadline input {
+  width: 30%;
+}
+.addTodo .task .comment {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.addTodo .task .comment >.title {
+  display: flex;
+  align-items: center;
+}
+.addTodo .task .deadline img {
+  width: 20px;
+  height: 20px;
+  background-size: contain;
+  margin: 0 5px 0 0;
+}
+.addTodo .task .comment img {
+  width: 20px;
+  height: 20px;
+  background-size: contain;
+  margin: 0 5px 0 0;
+}
+.addTodo .bottom-group {
+  height: 60px;
+  font-size: 20px;
+  display: flex;
+  text-align: center;
+}
+.addTodo .cancel {
+  cursor: pointer;
+  line-height: 60px;
+  width: 50%;
+  background: #FFFFFF;
+  font-family: Roboto-Regular;
+  font-size: 24px;
+  color: #D0021B;
+  text-align: center;
+  border: 0 ;
+}
+.addTodo .cancel:hover {
+  background: #f0efef;
+}
+.addTodo .cancel:focus {
+  outline: none;
+}
+.addTodo .addTask {
+  cursor: pointer;
+  line-height: 60px;
+  width: 50%;
+  background: #4A90E2;
+  font-family: Roboto-Regular;
+  font-size: 24px;
+  color: #FFFFFF;
+  text-align: center;
+  border: 0 ;
+}
+.addTodo .addTask:hover {
+  background: rgb(103, 157, 218);
+}
+.addTodo .addTask:focus {
+  outline: none;
+}
+
+
+
+/* list */
+#list {
+  width:100%;
+  height:100%;
+  text-align:center;
+}
+.todoListItem {
+  width:50%; height:100px;
+  margin:5px auto;
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: #F2F2F2;
+  border-radius: 5px;
+}
+.todoListItem >.edit {
+  line-height: 40px;
+  font-size: 20px;
+  background-color: #fff;
+}
+.todoListItem .check {
+  width:20px; height:100%;
+  margin: 0 20px;
+}
+.todoListItem .check:checked + .todobox label {
+  text-decoration: line-through;
+  color:rgb(128, 123, 123)
+}
+.todoListItem .todobox {
+  height:100%;
+  width:100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  position: relative;
+}
+.todoListItem .todoName {
+  font-size: 24px;
+}
+.todoListItem .todobox .edit {
+  font-size: 24px;
+  outline: none;
+  border: 0;
+}
+.todoListItem .text-group {
+  display:flex;
+  align-items: center;
+  font-size: 15px;
+  padding: 5px 0;
+  position: absolute;
+  bottom: 0;
+}
+.todoListItem .text-group .todoDeadline {
+  width: 15px;
+  height: 15px;
+  background-image: url(../../assets/pic/deadlines.png);
+  background-size: contain;
+}
+.todoListItem .text-group span {
+  margin: 0 7px;
+}
+.todoListItem .pic-group {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  right:0;
+}
+.todoListItem .pic-group input {
+    border: 0 ;
+    outline: none;
+}
+.todoListItem .pic-group .star-group-list {
+  display:flex;
+  align-items: center;
+  position: relative;
+}
+.todoListItem .star-group-list input {
+  width: 30px;
+  height: 30px;
+  margin: 0 10px;
+  position: absolute;
+  right: 0;
+  opacity: 0;
+}
+.todoListItem .pic-group .star {
+  width: 30px;
+  height: 30px;
+  margin:0 10px;
+  background-image: url(../../assets/pic/star.png);
+  background-size: contain;
+}
+.todoListItem .pic-group .star_full {
+  width: 30px;
+  height: 30px;
+  margin:0 10px;
+  background-image: url(../../assets/pic/star_full.png);
+  background-size: contain;
+}
+.todoListItem .pic-group .edit {
+  width: 30px;
+  height: 30px;
+  margin:0 10px;
+  background-image: url(../../assets/pic/edit.png);
+  background-size: contain;
+}
+.todoListItem .destroy {
+  width: 30px;
+  height: 30px;
+  margin:0 10px;
+  background-image: url(../../assets/pic/delete.png);
+  background-size: contain;
+}
+
+
+.todoList > .addTodo {
+  margin: 0 auto;
+}
+.marking {
+  background: #FFF2DC;
+}

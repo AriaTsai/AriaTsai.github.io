@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>人氣動物明星</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+</head>
+<body>
+
+<div id="game">
+
+<!-- 遊戲說明 -->
+<div class="full-screen">
+  <div class="text">
+      人氣動物明星遊戲簡介：</br>
+      1. 系統隨機產生了人氣前三名的動物，完整猜出則挑戰成功。</br>
+      2. 每次猜測後，會依據你的猜測與正確答案做比對，請根據提示猜出正確圖片及順序。</br>
+      3. 猜出你心中的動物明星吧！！
+      <a href="javascript:;" class="btn-close" @click="closeInfo">X</a>
+  </div>
+</div>
+
+
+  <div class="back">
+    <div class="sun"></div>
+    <div class="tree"></div>
+
+<!-- 主要的內容區 -->
+    <div class="main">
+      <div class="container p-0">
+        <div class="row outside m-auto">
+
+<!-- 圖片區 -->
+          <div class="item-group card col-sm-12">
+            <div class="button-group">
+              <button type="button" class="btn btn-warning" id="btn" @click="resetHandler">重新開始</button>
+              <button type="button" class="btn btn-warning ml-2" id="btn-open" @click="closeInfo">遊戲簡介</button>
+            </div>
+
+            <div class="row pic-group">
+              <div
+                class="col-4 content"
+                v-for="(list, index) in newPic"
+                @click="clickHandler(index)"
+                :key="list.title"
+              >
+                <img v-bind:src="list.url" alt="">
+                <span>{{ list.title }}</span>
+              </div>
+            </div>
+
+          </div>
+
+
+<!-- 猜測區 -->
+
+          <div class="item-group card col-sm-6">
+            <div class="title-group">
+              <div class="row title">
+                <div class="col-4 pr-2 pl-2">猜測1</div>
+                <div class="col-4 pr-2 pl-2">猜測2</div>
+                <div class="col-4 pr-2 pl-2">猜測3</div>
+              </div>
+            </div>
+            <div class="guest-group">
+              <div class="row guest">
+                <div class="col-4 pr-2 pl-2" v-for="list in guest">{{ list }}</div>
+              </div>
+            </div>
+          </div>
+
+
+<!-- 提示區 -->
+          <div class="item-group card col-sm-6">
+            <div class="title-group">
+              <div class="row title">
+                <div class="col-6 pr-2 pl-2">猜對圖片數</div>
+                <div class="col-6 pr-2 pl-2">猜對順序數</div>
+              </div>
+            </div>
+            <div class="answer-group">
+              <div class="row answer" v-for="item in checkLine">
+                <div class="col-6 pr-2 pl-2">{{ item.ans1 }}</div>
+                <div class="col-6 pr-2 pl-2">{{ item.ans2 }}</div>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+</div>
+
+<!-- Vue.js -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.js'></script>
+<!-- Bootstrap -->
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<!-- JS -->
+<script src="./js/index.js"></script>
+
+
+</body>
+</html>

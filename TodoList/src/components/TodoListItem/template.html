@@ -1,0 +1,64 @@
+<div class="todoList">
+  <div class="todoListItem" :class="{marking: todo.mark}">
+
+      <input type="checkbox" class="check" id="check" v-model="complete">
+
+      <div class="todobox">
+        <input type="text"
+              class="edit"
+              v-model="edit"
+              v-if="edit !== null"
+              v-focus
+              @keyup.enter="submitHandler"
+              @keyup.esc="cancelHandler"
+              :class="{marking: todo.mark}"
+        >
+        <label class="todoName" for="" v-else>{{ todo.content }}</label>
+        <div class="text-group">
+          <label class="todoDeadline" for=""></label>
+          <span>{{ todo.deadline }}</span>
+        </div>
+      </div>
+
+      <div class="pic-group">
+          <div class="star-group-list">
+            <input type="checkbox" id="star" v-model="mark">
+            <label class="star" for="star" v-if="mark==false"></label>
+            <label class="star_full" for="star" v-else></label>
+          </div>
+          <input type="button" class="edit" @click="editHandler" :class="{marking: todo.mark}">
+          <input type="button" class="destroy" @click="destroyHandler" :class="{marking: todo.mark}">
+      </div>
+
+  </div>
+
+
+  <div class="addTodo" v-if="edit !== null">
+
+    <div class="task">
+      <div class="add">
+        <div class="deadline">
+          <div class="title">
+            <img src="../../assets/pic/deadlines.png" alt="">
+            <span>Deadline</span>        
+          </div>
+          <input type="date" name="bday" v-model="deadline">
+        </div>
+        <div class="comment">
+          <div class="title">
+            <img src="../../assets/pic/comment.png" alt="">
+            <span>Comment</span>
+          </div>
+          <textarea name="" id="" cols="30" rows="6" v-model="comment">
+          </textarea>
+        </div>
+      </div>
+      <div class="bottom-group">
+        <button class="cancel" @click="cancelHandler">Cancel</button>
+        <button class="addTask" @click="submitHandler"><span>+</span>AddTask</button>
+      </div>
+    </div>
+
+  </div>
+
+</div>
